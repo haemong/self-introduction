@@ -1,0 +1,45 @@
+@charset "utf-8";
+body
+{
+    padding: 0px;
+    margin: 0px;
+}
+.bg
+{
+    width: 100%;
+    height: 100vh;
+    /*overflow: ; /* jhm 넘치는 부분 자르기 */
+    display: flex;
+    justify-content: center; /* flex 요소의 수평 방향 정렬 방식 */
+    align-items: center; /* flex 요소의 수직 방향 정렬 방식 */
+    position: relative;
+    
+}
+.bg video
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* video 크기에 맞게끔 자르기 */
+}
+.jhm
+{
+    position: absolute;
+    background: white;
+    opacity: 0.5; /* 투명도를 줘서 video가 보이게끔 만듦 */
+    font-size: 5vw;
+    text-align: center;
+    line-height: 10vh;
+    mix-blend-mode: screen; /* jhm에 video가 나오게끔 만듦  */
+}
+li
+{
+    list-style-type: none;
+}
+a
+{
+    text-decoration: none;
+    color: black;
+}

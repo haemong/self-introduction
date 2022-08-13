@@ -1,0 +1,177 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Nanum+Myeongjo&family=Playfair+Display&display=swap');
+
+body
+{
+    background:linear-gradient(90deg,darkolivegreen 50%,tan 50%);
+}
+.button
+{
+    font-size: 40px;
+    list-style-type: none; /* list 앞에 점 없애기 */
+    text-align: center;
+    line-height: 15vh;
+    text-transform: uppercase;
+    letter-spacing: 10px; /* 글자 사이사이 간격 */
+    padding: 5% 0; /* padding을 줘서 시각적 답답함 없애기 */
+    color: white;
+}
+
+.btn
+{
+    display: inline-block; /* 버튼의 텍스트를 표시하기 위해 디스플레이를 인라인 블록으로 설정 */
+    background: none; /* btn background color none으로 하여서 button 안 보이게 할 것*/
+    text-decoration: none; /* text 밑줄 제거 */
+    width: 300px; /* btn 가로 */
+    height: 40px; /* btn 세로 */
+    margin: 0; /* 위 아래 왼쪽 오른쪽 0px */
+    position: relative;
+}
+
+.btn.btn1::after, .btn.btn1::before,
+.btn.btn2::after, .btn.btn2::before, 
+.btn.btn3::after, .btn.btn3::before, 
+.btn.btn4::after, .btn.btn4::before, 
+.btn.btn5::after, .btn.btn5::before,
+.btn.btn6::after, .btn.btn6::before
+{
+    position: absolute;
+    text-align: center; /* width 100%가 아니기 때문에 이것만 쓰면 작동하지 않음 */
+    width: 100%;
+    font-family: 'Aboreto', cursive;
+    font-weight: 800; /* text 굵기 */
+    text-transform: uppercase; /* 대문자 */
+    line-height: 1;
+    color: white;
+    transition: all 500ms; /* 좀 더 부드럽게 사라지게 하기 위해서 */
+    left: 0; /* 0을 주어 hover after 이후 test가 제자리로 돌아올 수 있게 한다 */
+}
+.btn.btn1::after
+{
+    content: "name";
+    /*color: white; /* 첫 화면 text color */
+}
+.btn.btn2::after
+{
+    content: "birth";
+}
+.btn.btn3::after
+{
+    content: "like";
+}
+.btn.btn4::after
+{
+    content: "want";
+}
+.btn.btn5::after
+{
+    content: "mbti";
+}
+.btn.btn6::after
+{
+    content: "picture"; 
+}
+.btn.btn1:hover::after,
+.btn.btn2:hover::after,
+.btn.btn3:hover::after,
+.btn.btn4:hover::after,
+.btn.btn5:hover::after,
+.btn.btn6:hover::after
+{
+    left: -350px; /* px만큼 움직임*/
+    color: darkolivegreen;/* 여기서 text color 변경을 해주면 될 듯 없어지게 만듦*/
+}
+.btn.btn1::before,
+.btn.btn2::before,
+.btn.btn3::before,
+.btn.btn4::before,
+.btn.btn5::before,
+.btn.btn6::before
+{
+    background: linear-gradient(90deg, darkolivegreen 50%, tan 50%);
+    background-clip: text; /* 배경이미지나 배경색을 박스 중 어디에 넣겠는가 */
+    -webkit-text-fill-color: transparent;
+}
+.btn.btn1::before
+{
+    content: "정해만";
+}
+.btn.btn2::before
+{
+    content: "1995.07.04";
+    font-size: 35px;
+}
+.btn.btn3::before
+{
+    content: "watching movies";
+    font-size: 33px;
+}
+.btn.btn4::before
+{
+    content: "back-end developer";
+    font-size: 32px;
+}
+.btn.btn5::before
+{
+    content: "enfp";
+}
+.btn.btn6::before
+{
+    content: "click";
+}
+
+.btn.btn1:hover::before,
+.btn.btn2:hover::before,
+.btn.btn3:hover::before,
+.btn.btn4:hover::before,
+.btn.btn5:hover::before,
+.btn.btn6:hover::before
+{
+    -webkit-text-fill-color: white;/* 여기서 after text 컬러 넣기 */
+    /* fill color로 text를 채워넣었기 때문에 마지막에도 이렇게 선언 */
+}
+
+.messenger
+{
+    list-style-type: none;
+    font-size: 25px;
+    text-align: left;
+    margin: -300px 0 0;
+}
+.icon
+{
+    text-decoration: none;
+    background-color: rgb(166, 178, 159);
+    height: 45px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    transition: all 2s;
+}
+.instagram
+{
+    color: indianred;
+}
+.github
+{
+    color: gray;
+}
+.blog
+{
+    color: black;
+}
+.icon i
+{
+    transition: all 0.1s;
+}
+.icon:hover
+{
+    background-color: white;
+}
+.icon:hover i
+{
+    transform: rotate(15deg) scale(1.2);
+}
