@@ -1,72 +1,48 @@
 @charset "utf-8";
-body
-{
-    background: linear-gradient(90deg, slategrey 50%, white 50%);
-}
-.container
-{
-    width: 220px;
-    height: 290px;
-    padding: 50% auto;
-    margin: 10% auto;
-}
-.box
-{
-    margin: 0 10px;
-    transition: all 1s;
-    position: relative;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.box img
-{  
-    display: block;
-    width: 180px; /* 사진 사이즈 고정 */
-    height: 250px; /* 사진 사이즈 고정 */
-    border-radius: 50px;
-}
-.box:hover
-{
-    transform: scale(1.5); /* mouse over시 image size를 얼마나 늘리겠냐 */
-    z-index: 2; /* mouse over시 해당 image를 가장 상위로 올려줌으로서 사진 겹치는 걸 방지 */
-
-}
-.box:hover img
-{
-    float: left;
-    top: 50px;
-    left: -50px;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  background-color: rgb(214, 231, 190);
 }
 
-.box .img5
-{
-    position: absolute;
-    top: 50px;
+#frame {
+  width: 300px;
+  height: 450px;
 }
-.box .img4
-{
-    position: absolute;
-    top: 100px;
-    left: 50px;
+
+#frame:hover {
+  transform: scale3d(1.05, 1.05, 1.05); 
+  /* 기존 img를 hover했을 때 3d 입체감 느낌 있게 x,y,z축 1.05배씩 커지게함*/
+  transition: 1000ms;
+  /*frame의 애니메이션 변화 시간(1.05배 커지는 걸 부드럽게 보여주고 싶어서 느리게 함)*/
 }
-.box .img3
-{
-    position: absolute;
-    top: 150px;
-    left: 100px;
+
+#card {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-image: url("jhm1.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition-duration: 250ms; /*트랜지션이 일어나는 지속 시간*/
+  transition-property: transform, box-shadow;
+  /* transform, box-shadow의 트랜지션을 위의 250ms로 함으로서 frame:hover 시 
+  반응이 250ms 안에 나타나게함 */
+  transition-timing-function: ease-out;
 }
-.box .img2
-{
-    position: absolute;
-    top: 200px;
-    left: 150px;
+
+#light {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
-.box .img1
-{
-    position: absolute;
-    top: 250px;
-    left: 200px;
-}
+
